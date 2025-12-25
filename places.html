@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yerler - Gezi Rehberi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">🌍 Gezi Rehberi</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="places.html" class="active">Yerler</a></li>
+                    <li><a href="contact.html">İletişim</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Gezilecek Yerler</h1>
+                <p>Tüm gezilecek yerlerinizi burada görüntüleyebilir ve yönetebilirsiniz</p>
+                <a href="place-create.html" class="btn btn-primary">Yeni Yer Ekle</a>
+            </div>
+        </section>
+
+        <section class="places-section">
+            <div class="container">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Yer ara...">
+                </div>
+                <div class="places-grid" id="placesGrid">
+                    <!-- JavaScript ile doldurulacak -->
+                </div>
+                <div id="noResults" class="no-results" style="display: none;">
+                    <p>Sonuç bulunamadı.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Gezi Rehberi - CENKER BAKAR 16008123111</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Tüm yerleri göster
+        displayAllPlaces();
+        
+        // Arama fonksiyonu
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            filterPlaces(e.target.value);
+        });
+    </script>
+</body>
+</html>
+

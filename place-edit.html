@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yer Düzenle - Gezi Rehberi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">🌍 Gezi Rehberi</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="places.html">Yerler</a></li>
+                    <li><a href="contact.html">İletişim</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <div class="container">
+                <div class="form-container">
+                    <h1>Yer Düzenle</h1>
+                    <form id="editPlaceForm">
+                        <div class="form-group">
+                            <label for="name">Yer Adı *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="city">Şehir *</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="country">Ülke *</label>
+                            <input type="text" id="country" name="country" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="description">Açıklama</label>
+                            <textarea id="description" name="description" rows="5"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="image">Görsel URL</label>
+                            <input type="url" id="image" name="image" placeholder="https://example.com/image.jpg">
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Güncelle</button>
+                            <a href="#" id="cancelBtn" class="btn btn-secondary">İptal</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Gezi Rehberi - CENKER BAKAR 16008123111</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // URL'den ID'yi al
+        const urlParams = new URLSearchParams(window.location.search);
+        const placeId = urlParams.get('id');
+        
+        if (placeId) {
+            loadPlaceForEdit(placeId);
+            document.getElementById('cancelBtn').href = `place-detail.html?id=${placeId}`;
+        } else {
+            window.location.href = 'places.html';
+        }
+        
+        document.getElementById('editPlaceForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            updatePlace(placeId);
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gezi Rehberi - Ana Sayfa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">🌍 Gezi Rehberi</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Ana Sayfa</a></li>
+                    <li><a href="places.html">Yerler</a></li>
+                    <li><a href="contact.html">İletişim</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Dünyayı Keşfedin</h2>
+                <p>En güzel gezilecek yerleri keşfedin ve kendi gezi notlarınızı oluşturun</p>
+                <a href="places.html" class="btn btn-primary">Yerleri Görüntüle</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>Özellikler</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📍</div>
+                        <h3>Yer Ekleme</h3>
+                        <p>Yeni gezilecek yerler ekleyin ve listenizi genişletin</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✏️</div>
+                        <h3>Düzenleme</h3>
+                        <p>Eklediğiniz yerlerin bilgilerini güncelleyin</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🗑️</div>
+                        <h3>Silme</h3>
+                        <p>Listenizden istemediğiniz yerleri kaldırın</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📋</div>
+                        <h3>Listeleme</h3>
+                        <p>Tüm gezilecek yerlerinizi tek bir listede görüntüleyin</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="popular-places">
+            <div class="container">
+                <h2>Popüler Yerler</h2>
+                <div class="places-grid" id="popularPlaces">
+                    <!-- JavaScript ile doldurulacak -->
+                </div>
+                <div class="text-center">
+                    <a href="places.html" class="btn btn-secondary">Tüm Yerleri Görüntüle</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Gezi Rehberi - CENKER BAKAR 16008123111</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Popüler yerleri göster
+        displayPopularPlaces();
+    </script>
+</body>
+</html>
+

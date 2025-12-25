@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yer Detayı - Gezi Rehberi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">🌍 Gezi Rehberi</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="places.html">Yerler</a></li>
+                    <li><a href="contact.html">İletişim</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="place-detail-section">
+            <div class="container">
+                <a href="places.html" class="back-link">← Geri Dön</a>
+                <div id="placeDetail" class="place-detail-card">
+                    <!-- JavaScript ile doldurulacak -->
+                </div>
+                <div class="place-actions">
+                    <a href="#" id="editBtn" class="btn btn-secondary">Düzenle</a>
+                    <button id="deleteBtn" class="btn btn-danger">Sil</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Gezi Rehberi - CENKER BAKAR 16008123111</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // URL'den ID'yi al
+        const urlParams = new URLSearchParams(window.location.search);
+        const placeId = urlParams.get('id');
+        
+        if (placeId) {
+            displayPlaceDetail(placeId);
+            
+            // Düzenle butonu
+            document.getElementById('editBtn').href = `place-edit.html?id=${placeId}`;
+            
+            // Sil butonu
+            document.getElementById('deleteBtn').addEventListener('click', function() {
+                if (confirm('Bu yeri silmek istediğinizden emin misiniz?')) {
+                    deletePlace(placeId);
+                }
+            });
+        } else {
+            window.location.href = 'places.html';
+        }
+    </script>
+</body>
+</html>
+
